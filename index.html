@@ -9,7 +9,6 @@
     content="Ahmed Aldulaimi - Memory Validation Engineer, Electrical Engineer, Cloud & AI builder. Portfolio featuring AMD validation work, Youooo World, AI search systems, cloud projects, and upcoming ASU master's studies."
   />
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -17,279 +16,185 @@
     rel="stylesheet"
   />
 
-  <style>
-    :root {
-      --bg: #09090b;
-      --card: rgba(24, 24, 27, 0.7);
-      --line: rgba(255, 255, 255, 0.08);
-      --text: #f4f4f5;
-      --muted: #a1a1aa;
-      --accent: #10b981;
-      --accent-soft: rgba(16, 185, 129, 0.14);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(16,185,129,0.10), transparent 30%),
-        radial-gradient(circle at top right, rgba(59,130,246,0.10), transparent 28%),
-        linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
-      color: var(--text);
-    }
-
-    .title-font {
-      font-family: "Space Grotesk", sans-serif;
-    }
-
-    .glass {
-      background: var(--card);
-      backdrop-filter: blur(14px);
-      border: 1px solid var(--line);
-    }
-
-    .section-title {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .chip {
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .hero-grid {
-      background-image:
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 28px 28px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.2));
-    }
-
-    .timeline-dot::before {
-      content: "";
-      position: absolute;
-      left: -33px;
-      top: 7px;
-      width: 11px;
-      height: 11px;
-      border-radius: 9999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(16,185,129,0.15);
-    }
-
-    .project-card:hover,
-    .experience-card:hover,
-    .edu-card:hover {
-      transform: translateY(-4px);
-      transition: 0.25s ease;
-      border-color: rgba(16,185,129,0.35);
-    }
-
-    .accent-text {
-      color: var(--accent);
-    }
-
-    .stat-number {
-      font-family: "Space Grotesk", sans-serif;
-      letter-spacing: -0.04em;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="text-zinc-100">
-  <!-- Navigation -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="flex items-center justify-between h-16">
-        <a href="#home" class="title-font text-xl font-bold tracking-tight">
-          Ahmed<span class="text-emerald-400">.</span>
-        </a>
+<body>
+  <!-- Background -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
 
-        <nav class="hidden md:flex items-center gap-7 text-sm text-zinc-300">
-          <a href="#about" class="hover:text-white transition">About</a>
-          <a href="#experience" class="hover:text-white transition">Experience</a>
-          <a href="#projects" class="hover:text-white transition">Projects</a>
-          <a href="#education" class="hover:text-white transition">Education</a>
-          <a href="#skills" class="hover:text-white transition">Skills</a>
-          <a href="#contact" class="hover:text-white transition">Contact</a>
-        </nav>
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#home" class="logo">Ahmed<span>.</span></a>
 
+      <nav class="nav" id="navMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
         <a
+          class="btn btn-outline desktop-only"
           href="https://www.linkedin.com/in/ahmedaldulaimi"
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden md:inline-flex items-center rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-emerald-400 transition"
         >
           LinkedIn
         </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="relative overflow-hidden">
-    <div class="hero-grid absolute inset-0 opacity-40"></div>
-
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-20 lg:pt-24 lg:pb-28 relative z-10">
-      <div class="grid lg:grid-cols-[1.25fr_0.75fr] gap-10 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 rounded-full chip px-4 py-2 text-sm text-zinc-300 mb-6">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            Memory Validation Engineer • Cloud & AI Builder • Austin, Texas
-          </div>
-
-          <h1 class="title-font text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight max-w-4xl">
-            Ahmed Aldulaimi
-          </h1>
-
-          <p class="mt-5 text-xl sm:text-2xl text-emerald-400 font-medium">
-            Electrical Engineer • Platform Validation • Cloud, AI & Product Builder
-          </p>
-
-          <p class="mt-8 max-w-3xl text-lg text-zinc-300 leading-8">
-            I work at the intersection of hardware validation, electrical engineering,
-            cloud systems, and product building. My background spans post-silicon and
-            memory validation, BIOS and platform bring-up, electrical engineering, AWS,
-            automation, and AI-based web products. I am also an
-            <span class="text-white font-semibold">incoming Master of Science in Information Technology student at Arizona State University, starting Fall 2026</span>.
-          </p>
-
-          <div class="flex flex-wrap gap-3 mt-8">
-            <span class="chip rounded-full px-4 py-2 text-sm text-zinc-200">AMD Validation</span>
-            <span class="chip rounded-full px-4 py-2 text-sm text-zinc-200">Electrical Engineering</span>
-            <span class="chip rounded-full px-4 py-2 text-sm text-zinc-200">AWS & Cloud</span>
-            <span class="chip rounded-full px-4 py-2 text-sm text-zinc-200">AI Products</span>
-            <span class="chip rounded-full px-4 py-2 text-sm text-zinc-200">Kubernetes</span>
-            <span class="chip rounded-full px-4 py-2 text-sm text-zinc-200">Startup Building</span>
-          </div>
-
-          <div class="flex flex-wrap gap-4 mt-10">
-            <a
-              href="#projects"
-              class="inline-flex items-center rounded-2xl bg-white px-6 py-3.5 font-semibold text-black hover:bg-zinc-200 transition"
-            >
-              View Projects
-            </a>
-            <a
-              href="mailto:aldulaimi_ahmed@yahoo.com"
-              class="inline-flex items-center rounded-2xl border border-white/15 px-6 py-3.5 font-semibold hover:border-white/35 transition"
-            >
-              Email Me
-            </a>
-            <a
-              href="#contact"
-              class="inline-flex items-center rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-3.5 font-semibold text-emerald-300 hover:bg-emerald-500/15 transition"
-            >
-              Let’s Connect
-            </a>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-14">
-            <div class="glass rounded-3xl p-5">
-              <div class="stat-number text-3xl font-bold">12+</div>
-              <div class="text-sm text-zinc-400 mt-1">Years engineering experience</div>
-            </div>
-            <div class="glass rounded-3xl p-5">
-              <div class="stat-number text-3xl font-bold">AMD</div>
-              <div class="text-sm text-zinc-400 mt-1">Memory & platform validation</div>
-            </div>
-            <div class="glass rounded-3xl p-5">
-              <div class="stat-number text-3xl font-bold">AWS</div>
-              <div class="text-sm text-zinc-400 mt-1">Certified cloud track</div>
-            </div>
-            <div class="glass rounded-3xl p-5">
-              <div class="stat-number text-3xl font-bold">ASU</div>
-              <div class="text-sm text-zinc-400 mt-1">Master’s starts Fall 2026</div>
-            </div>
-          </div>
+  <section id="home" class="hero section">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">
+          <span class="live-dot"></span>
+          Memory Validation Engineer • Cloud & AI Builder • Austin, Texas
         </div>
 
-        <div class="glass rounded-[2rem] p-8 lg:p-10">
-          <div class="w-28 h-28 rounded-full bg-emerald-500/15 border border-emerald-400/20 flex items-center justify-center text-4xl font-bold title-font text-emerald-300 mx-auto">
-            AA
-          </div>
+        <h1 class="hero-title">
+          Ahmed Aldulaimi
+        </h1>
 
-          <div class="mt-8 space-y-5">
-            <div class="border-b border-white/10 pb-5">
-              <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Current Focus</p>
-              <p class="mt-2 text-zinc-200 leading-7">
-                Memory validation, hardware bring-up, automation, cloud systems, and building real products around markets, jobs, and AI.
-              </p>
-            </div>
+        <h2 class="hero-subtitle">
+          <span id="typingText"></span><span class="cursor">|</span>
+        </h2>
 
-            <div class="border-b border-white/10 pb-5">
-              <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Flagship Product</p>
-              <p class="mt-2 text-zinc-200 leading-7">
-                <span class="font-semibold text-white">Youooo World</span> — a global intelligence dashboard combining market data, job signals, career intelligence, and AI-driven decision support.
-              </p>
-            </div>
+        <p class="hero-text">
+          I work at the intersection of hardware validation, electrical engineering,
+          cloud systems, AI products, and real-world technical execution. My background
+          includes AMD validation, AWS/cloud training, automation, and building products
+          like <strong>Youooo World</strong> and <strong>Youooo AI</strong>.
+          I am also an <strong>incoming Master of Science in Information Technology student at Arizona State University, starting Fall 2026</strong>.
+        </p>
 
-            <div class="border-b border-white/10 pb-5">
-              <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Education Path</p>
-              <p class="mt-2 text-zinc-200 leading-7">
-                B.S. in Electrical & Electronic Engineering, UT Austin cloud program, and incoming M.S. in Information Technology at ASU.
-              </p>
-            </div>
-
-            <div>
-              <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Based In</p>
-              <p class="mt-2 text-zinc-200">Austin, Texas, United States</p>
-              <p class="mt-1 text-zinc-400 text-sm">Open to engineering, validation, cloud, and product opportunities</p>
-            </div>
-          </div>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Let’s Connect</a>
+          <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
         </div>
+
+        <div class="hero-tags">
+          <span>AMD Validation</span>
+          <span>Electrical Engineering</span>
+          <span>AWS & Cloud</span>
+          <span>AI Products</span>
+          <span>Kubernetes</span>
+          <span>Startup Building</span>
+        </div>
+      </div>
+
+      <div class="hero-card reveal reveal-delay-1">
+        <div class="profile-badge">AA</div>
+
+        <div class="mini-panel">
+          <span class="panel-label">Current Focus</span>
+          <p>
+            Platform and memory validation, automation, cloud systems,
+            and building real products around markets, jobs, and AI.
+          </p>
+        </div>
+
+        <div class="mini-panel">
+          <span class="panel-label">Flagship Product</span>
+          <p>
+            <strong>Youooo World</strong> — global intelligence for markets and careers,
+            combining live signals, jobs, and AI-driven product thinking.
+          </p>
+        </div>
+
+        <div class="mini-panel">
+          <span class="panel-label">Education Path</span>
+          <p>
+            B.S. in Electrical & Electronic Engineering, UT Austin cloud program,
+            and incoming ASU Master’s in IT.
+          </p>
+        </div>
+
+        <div class="mini-panel">
+          <span class="panel-label">Languages</span>
+          <p>English • Arabic</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container stats-grid reveal reveal-delay-2">
+      <div class="stat-card">
+        <div class="stat-number" data-target="12">0</div>
+        <div class="stat-label">Years Engineering Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number stat-text">AMD</div>
+        <div class="stat-label">Memory & Platform Validation</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number stat-text">AWS</div>
+        <div class="stat-label">Cloud Learning & Certifications</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number stat-text">ASU</div>
+        <div class="stat-label">Master’s Starts Fall 2026</div>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8">
-        <div class="glass rounded-[2rem] p-8">
-          <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">About Me</p>
-          <h2 class="section-title mt-3">Engineer by training. Builder by mindset.</h2>
-          <p class="mt-6 text-zinc-300 leading-8">
-            My career started in electrical engineering and large-scale project execution, then expanded into automotive, validation, cloud computing, and now AI-powered digital products. I enjoy solving technical problems across hardware and software, from lab bring-up and debugging to deployment and user-facing product design.
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">About</span>
+        <h2>Engineer by training. Builder by mindset.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="card reveal">
+          <p>
+            My career started in electrical engineering and large-scale execution,
+            then expanded into automotive, validation, cloud systems, and AI-driven web products.
+            I enjoy solving technical problems across both hardware and software — from lab bring-up
+            and debugging to deployment and product design.
           </p>
-          <p class="mt-4 text-zinc-300 leading-8">
-            I am especially interested in roles and projects where deep technical execution, systems thinking, and practical delivery matter. That is the same mindset behind the products I have been building: useful, scalable, and valuable enough to become real businesses.
+          <p>
+            I am especially interested in work where deep technical execution and product thinking
+            come together. I do not just want to maintain systems — I want to help build useful,
+            scalable, valuable technology.
           </p>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div class="glass rounded-[2rem] p-7">
-            <h3 class="font-semibold text-lg">What I Work On</h3>
-            <ul class="mt-5 space-y-3 text-zinc-300">
-              <li>• Memory and platform validation</li>
-              <li>• BIOS / UEFI and system bring-up</li>
-              <li>• Python automation and Linux workflows</li>
-              <li>• AWS, cloud infrastructure, and APIs</li>
-              <li>• Web products built with AI features</li>
+        <div class="about-side">
+          <div class="card reveal reveal-delay-1">
+            <h3>What I Work On</h3>
+            <ul>
+              <li>Memory and platform validation</li>
+              <li>BIOS / UEFI and bring-up</li>
+              <li>Python automation and Linux workflows</li>
+              <li>AWS, infrastructure, and deployment</li>
+              <li>AI-powered web products</li>
             </ul>
           </div>
 
-          <div class="glass rounded-[2rem] p-7">
-            <h3 class="font-semibold text-lg">What Makes Me Different</h3>
-            <ul class="mt-5 space-y-3 text-zinc-300">
-              <li>• Hardware + software crossover</li>
-              <li>• Product mindset, not just task execution</li>
-              <li>• Real-world engineering background</li>
-              <li>• Comfortable in technical ambiguity</li>
-              <li>• English and Arabic fluency</li>
+          <div class="card reveal reveal-delay-2">
+            <h3>What Makes Me Different</h3>
+            <ul>
+              <li>Hardware + software crossover</li>
+              <li>Strong real-world engineering background</li>
+              <li>Product mindset, not just execution</li>
+              <li>Comfortable in ambiguity and fast iteration</li>
+              <li>English and Arabic fluency</li>
             </ul>
-          </div>
-
-          <div class="glass rounded-[2rem] p-7 sm:col-span-2">
-            <h3 class="font-semibold text-lg">Career Direction</h3>
-            <p class="mt-4 text-zinc-300 leading-8">
-              I am focused on growing into roles and businesses that combine advanced validation, cloud systems, automation, AI, and product development. My long-term goal is not just to work on strong technology, but to build products and platforms people actually use.
-            </p>
           </div>
         </div>
       </div>
@@ -297,48 +202,56 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="py-20 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Experience</p>
-      <h2 class="section-title mt-3">Professional Journey</h2>
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Experience</span>
+        <h2>Professional Journey</h2>
+      </div>
 
-      <div class="mt-12 relative ml-8 border-l border-white/10 space-y-8">
-        <div class="experience-card glass rounded-[2rem] p-7 relative timeline-dot">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+      <div class="timeline">
+        <div class="timeline-item card reveal">
+          <div class="timeline-top">
             <div>
-              <h3 class="text-xl font-semibold">Memory Validation Engineer</h3>
-              <p class="mt-1 text-emerald-400 font-medium">AMD • Austin, Texas</p>
+              <h3>Memory Validation Engineer</h3>
+              <p class="muted strong">AMD • Austin, Texas</p>
             </div>
-            <p class="text-zinc-400 text-sm md:text-base">Current</p>
+            <span class="timeline-date">Current</span>
           </div>
-          <p class="mt-5 text-zinc-300 leading-8">
-            Working on platform and memory validation in a hands-on hardware environment, including system bring-up, BIOS and firmware interaction, validation workflows, debug, margining, and automation support across enterprise-class systems.
+          <p>
+            Working on platform and memory validation in a hands-on hardware environment,
+            including system bring-up, BIOS and firmware interaction, validation workflows,
+            debug, margining, and automation support across enterprise-class systems.
           </p>
         </div>
 
-        <div class="experience-card glass rounded-[2rem] p-7 relative timeline-dot">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+        <div class="timeline-item card reveal reveal-delay-1">
+          <div class="timeline-top">
             <div>
-              <h3 class="text-xl font-semibold">Electrical Engineer / Technical Operations Background</h3>
-              <p class="mt-1 text-emerald-400 font-medium">Texas-based engineering roles</p>
+              <h3>Technical Engineering / Operations Roles</h3>
+              <p class="muted strong">Texas-based engineering background</p>
             </div>
-            <p class="text-zinc-400 text-sm md:text-base">Recent years</p>
+            <span class="timeline-date">Recent Years</span>
           </div>
-          <p class="mt-5 text-zinc-300 leading-8">
-            Built strong crossover experience in technical support, automotive operations, electrical systems, troubleshooting, and field execution. This period strengthened my ability to work across engineering, operations, and real-world deployment conditions.
+          <p>
+            Built strong crossover experience across technical support, automotive operations,
+            system troubleshooting, and engineering execution. Strengthened practical problem solving
+            under real operational conditions.
           </p>
         </div>
 
-        <div class="experience-card glass rounded-[2rem] p-7 relative timeline-dot">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+        <div class="timeline-item card reveal reveal-delay-2">
+          <div class="timeline-top">
             <div>
-              <h3 class="text-xl font-semibold">Electrical Site Engineer</h3>
-              <p class="mt-1 text-emerald-400 font-medium">Dubai Contracting Company • UAE</p>
+              <h3>Electrical Site Engineer</h3>
+              <p class="muted strong">Dubai Contracting Company • UAE</p>
             </div>
-            <p class="text-zinc-400 text-sm md:text-base">Earlier career foundation</p>
+            <span class="timeline-date">Earlier Career</span>
           </div>
-          <p class="mt-5 text-zinc-300 leading-8">
-            Supported major electrical engineering work involving installation, coordination, commissioning, and execution for industrial and commercial environments. This built the practical engineering discipline that still shapes how I solve problems today.
+          <p>
+            Supported electrical engineering work involving installation, coordination,
+            commissioning, and execution for industrial and commercial environments.
+            This built the engineering discipline that still shapes my work today.
           </p>
         </div>
       </div>
@@ -346,104 +259,158 @@
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-20 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Projects</p>
-      <h2 class="section-title mt-3">What I’ve Been Building</h2>
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Projects</span>
+        <h2>What We Built</h2>
+      </div>
 
-      <div class="grid lg:grid-cols-2 gap-7 mt-12">
-        <div class="project-card glass rounded-[2rem] p-8">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="text-2xl font-semibold">Youooo World</h3>
-            <span class="rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-300">Flagship</span>
+      <div class="projects-grid">
+        <article class="project-card card reveal">
+          <div class="project-top">
+            <h3>Youooo World</h3>
+            <span class="project-badge">Flagship</span>
           </div>
-          <p class="mt-5 text-zinc-300 leading-8">
-            A global intelligence dashboard designed to combine market tracking, AI-style signals, job intelligence, and world awareness into one product. Built with the idea of turning a website into an actual sellable product, not just a portfolio demo.
+          <p>
+            A global intelligence dashboard designed around markets, hiring signals,
+            world awareness, and AI-style decision support. Built with a product mindset
+            to become something valuable and potentially sellable.
           </p>
-          <ul class="mt-5 space-y-2 text-zinc-300">
-            <li>• Market and signal tracking</li>
-            <li>• Career and hiring intelligence concepts</li>
-            <li>• Cloudflare-based deployment workflows</li>
-            <li>• Product-focused UI evolution with stable branding</li>
+          <ul>
+            <li>Global intelligence dashboard concept</li>
+            <li>Market and signal tracking</li>
+            <li>Career intelligence and hiring signal direction</li>
+            <li>Cloudflare deployment and product-style UI evolution</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="project-card glass rounded-[2rem] p-8">
-          <h3 class="text-2xl font-semibold">Youooo AI / AI Search Platform</h3>
-          <p class="mt-5 text-zinc-300 leading-8">
-            A custom AI chatbot and prediction-oriented web product built with FastAPI and deployed in cloud environments. The goal has been to combine conversational AI, search, and market-oriented functionality into a practical web experience.
+        <article class="project-card card reveal reveal-delay-1">
+          <div class="project-top">
+            <h3>Youooo AI</h3>
+            <span class="project-badge">AI Product</span>
+          </div>
+          <p>
+            A custom AI chatbot and market-oriented product direction built with FastAPI,
+            cloud deployment, and UI/UX improvements. The goal was to combine AI,
+            search, and practical user interaction.
           </p>
-          <ul class="mt-5 space-y-2 text-zinc-300">
-            <li>• FastAPI backend development</li>
-            <li>• AI chatbot and market prediction concepts</li>
-            <li>• HTTPS and production deployment work</li>
-            <li>• UI/UX improvements and multilingual direction</li>
+          <ul>
+            <li>FastAPI backend work</li>
+            <li>AI chat and prediction direction</li>
+            <li>HTTPS and deployment workflows</li>
+            <li>Arabic / English product thinking</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="project-card glass rounded-[2rem] p-8">
-          <h3 class="text-2xl font-semibold">Cloud & Kubernetes Lab Work</h3>
-          <p class="mt-5 text-zinc-300 leading-8">
-            Built cloud and infrastructure-focused projects around AWS, Linux, automation, and Kubernetes. This work reflects my long-term interest in systems engineering and platform-level problem solving beyond traditional electrical roles.
+        <article class="project-card card reveal reveal-delay-2">
+          <div class="project-top">
+            <h3>Cloud & Kubernetes Lab</h3>
+            <span class="project-badge">Infrastructure</span>
+          </div>
+          <p>
+            Hands-on cloud and infrastructure work around AWS, Linux, automation,
+            and Kubernetes. This reflects my longer-term interest in platform engineering
+            and production-level systems.
           </p>
-          <ul class="mt-5 space-y-2 text-zinc-300">
-            <li>• AWS-based deployments</li>
-            <li>• Kubernetes cluster planning and automation</li>
-            <li>• Linux administration and service management</li>
-            <li>• Infrastructure-focused engineering mindset</li>
+          <ul>
+            <li>AWS-based deployments</li>
+            <li>Kubernetes cluster planning</li>
+            <li>Linux administration and service management</li>
+            <li>Automation-driven engineering workflow</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="project-card glass rounded-[2rem] p-8">
-          <h3 class="text-2xl font-semibold">Personal Product Experiments</h3>
-          <p class="mt-5 text-zinc-300 leading-8">
-            I regularly turn ideas into working prototypes, including iOS ambitions, automation concepts, AI content systems, and technical tools. The pattern is always the same: move from concept to something real and testable.
+        <article class="project-card card reveal">
+          <div class="project-top">
+            <h3>AI Search Bot on AWS</h3>
+            <span class="project-badge">Search + AI</span>
+          </div>
+          <p>
+            Built AI-search direction using Haystack as backend infrastructure on AWS Lightsail,
+            combining search thinking, cloud hosting, and conversational systems.
           </p>
-          <ul class="mt-5 space-y-2 text-zinc-300">
-            <li>• iOS and cross-platform app exploration</li>
-            <li>• Automation and service resilience setups</li>
-            <li>• AI-powered content and assistant ideas</li>
-            <li>• Product validation through rapid execution</li>
+          <ul>
+            <li>Haystack backend usage</li>
+            <li>AWS Lightsail deployment</li>
+            <li>AI search product direction</li>
+            <li>System-level experimentation</li>
           </ul>
-        </div>
+        </article>
+
+        <article class="project-card card reveal reveal-delay-1">
+          <div class="project-top">
+            <h3>Mobile App / iOS Direction</h3>
+            <span class="project-badge">Product Expansion</span>
+          </div>
+          <p>
+            Explored moving product ideas toward iPhone and Android experiences,
+            with interest in building stronger frontends and app-ready product systems.
+          </p>
+          <ul>
+            <li>Xcode-based app direction</li>
+            <li>Web-to-mobile expansion thinking</li>
+            <li>Cross-platform product planning</li>
+            <li>Scalable UI/UX direction</li>
+          </ul>
+        </article>
+
+        <article class="project-card card reveal reveal-delay-2">
+          <div class="project-top">
+            <h3>Automation & Always-On Systems</h3>
+            <span class="project-badge">Ops Mindset</span>
+          </div>
+          <p>
+            Repeatedly focused on keeping services running, restarting after crashes,
+            improving reliability, and turning prototypes into systems that feel production-ready.
+          </p>
+          <ul>
+            <li>Service uptime thinking</li>
+            <li>Restart and deployment workflows</li>
+            <li>Real-world reliability focus</li>
+            <li>Builder mindset over demo mindset</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Education -->
-  <section id="education" class="py-20 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Education</p>
-      <h2 class="section-title mt-3">Academic Background</h2>
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Education</span>
+        <h2>Academic Background</h2>
+      </div>
 
-      <div class="grid lg:grid-cols-3 gap-7 mt-12">
-        <div class="edu-card glass rounded-[2rem] p-8">
-          <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Incoming</p>
-          <h3 class="text-xl font-semibold mt-3">Master of Science in Information Technology</h3>
-          <p class="mt-3 text-emerald-400 font-medium">Arizona State University</p>
-          <p class="mt-2 text-zinc-300">Starting Fall 2026</p>
-          <p class="mt-5 text-zinc-400 leading-7">
-            Next step in expanding into advanced technology, systems, cloud, and modern product-focused engineering.
+      <div class="education-grid">
+        <div class="card reveal">
+          <h3>Master of Science in Information Technology</h3>
+          <p class="muted strong">Arizona State University</p>
+          <p class="highlight-line">Starting Fall 2026</p>
+          <p>
+            Incoming graduate student expanding deeper into modern systems,
+            cloud, technology strategy, and product-oriented engineering.
           </p>
         </div>
 
-        <div class="edu-card glass rounded-[2rem] p-8">
-          <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Completed</p>
-          <h3 class="text-xl font-semibold mt-3">Post Graduate Program in Cloud Computing</h3>
-          <p class="mt-3 text-emerald-400 font-medium">The University of Texas at Austin</p>
-          <p class="mt-2 text-zinc-300">2023 – 2024</p>
-          <p class="mt-5 text-zinc-400 leading-7">
-            Expanded practical skills in cloud technologies, infrastructure, and modern deployment workflows.
+        <div class="card reveal reveal-delay-1">
+          <h3>Post Graduate Program in Cloud Computing</h3>
+          <p class="muted strong">The University of Texas at Austin</p>
+          <p class="highlight-line">2023 – 2024</p>
+          <p>
+            Expanded practical skills in cloud technologies, infrastructure,
+            and modern deployment workflows.
           </p>
         </div>
 
-        <div class="edu-card glass rounded-[2rem] p-8">
-          <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Foundation</p>
-          <h3 class="text-xl font-semibold mt-3">Bachelor of Science in Electrical & Electronic Engineering</h3>
-          <p class="mt-3 text-emerald-400 font-medium">University of Technology – Iraq</p>
-          <p class="mt-2 text-zinc-300">U.S. equivalency recognized as B.S. in Electrical Engineering</p>
-          <p class="mt-5 text-zinc-400 leading-7">
-            Core engineering foundation that still drives my approach to systems, debugging, and technical execution.
+        <div class="card reveal reveal-delay-2">
+          <h3>B.S. in Electrical & Electronic Engineering</h3>
+          <p class="muted strong">University of Technology – Iraq</p>
+          <p class="highlight-line">U.S. equivalency recognized</p>
+          <p>
+            Core engineering foundation that still drives my approach to
+            systems, debugging, and technical execution.
           </p>
         </div>
       </div>
@@ -451,37 +418,39 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-20 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Skills & Certifications</p>
-      <h2 class="section-title mt-3">Core Strengths</h2>
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">Skills</span>
+        <h2>Core Strengths & Certifications</h2>
+      </div>
 
-      <div class="grid lg:grid-cols-2 gap-7 mt-12">
-        <div class="glass rounded-[2rem] p-8">
-          <h3 class="text-xl font-semibold">Technical Strengths</h3>
-          <div class="flex flex-wrap gap-3 mt-6">
-            <span class="chip rounded-full px-4 py-2 text-sm">Memory Validation</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Post-Silicon Validation</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">BIOS / UEFI</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Platform Bring-up</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Python</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Linux</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">AWS</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">FastAPI</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Cloudflare</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Kubernetes</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Automation</span>
-            <span class="chip rounded-full px-4 py-2 text-sm">Electrical Engineering</span>
+      <div class="skills-grid">
+        <div class="card reveal">
+          <h3>Technical Strengths</h3>
+          <div class="skill-tags">
+            <span>Memory Validation</span>
+            <span>Post-Silicon Validation</span>
+            <span>BIOS / UEFI</span>
+            <span>Platform Bring-up</span>
+            <span>Python</span>
+            <span>Linux</span>
+            <span>AWS</span>
+            <span>FastAPI</span>
+            <span>Cloudflare</span>
+            <span>Kubernetes</span>
+            <span>Automation</span>
+            <span>Electrical Engineering</span>
           </div>
         </div>
 
-        <div class="glass rounded-[2rem] p-8">
-          <h3 class="text-xl font-semibold">Certifications & Learning</h3>
-          <ul class="mt-6 space-y-3 text-zinc-300 leading-7">
-            <li>• AWS Certified Solutions Architect – Associate</li>
-            <li>• AWS Cloud Practitioner</li>
-            <li>• Cloud computing and infrastructure training</li>
-            <li>• Ongoing self-driven learning in AI, automation, and product systems</li>
+        <div class="card reveal reveal-delay-1">
+          <h3>Certifications & Learning</h3>
+          <ul class="cert-list">
+            <li>AWS Certified Solutions Architect – Associate</li>
+            <li>AWS Cloud Practitioner</li>
+            <li>Cloud infrastructure and deployment training</li>
+            <li>Ongoing learning in AI, automation, and modern product systems</li>
           </ul>
         </div>
       </div>
@@ -489,39 +458,37 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 border-t border-white/10">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
-      <div class="glass rounded-[2.2rem] p-10 text-center">
-        <p class="text-sm uppercase tracking-[0.18em] text-zinc-500">Contact</p>
-        <h2 class="section-title mt-3">Let’s build something valuable</h2>
-        <p class="mt-6 max-w-2xl mx-auto text-zinc-300 leading-8">
+  <section id="contact" class="section section-contact">
+    <div class="container">
+      <div class="contact-card card reveal">
+        <span class="section-kicker">Contact</span>
+        <h2>Let’s build something valuable</h2>
+        <p>
           I am open to conversations around validation engineering, cloud systems,
-          AI-enabled products, technical leadership growth, and startup-minded collaboration.
+          AI-enabled products, technical growth, and startup-minded collaboration.
         </p>
 
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-10">
-          <a
-            href="mailto:aldulaimi_ahmed@yahoo.com"
-            class="inline-flex items-center justify-center rounded-2xl bg-emerald-500 px-6 py-3.5 font-semibold text-black hover:bg-emerald-400 transition"
-          >
+        <div class="contact-actions">
+          <a href="mailto:aldulaimi_ahmed@yahoo.com" class="btn btn-primary">
             aldulaimi_ahmed@yahoo.com
           </a>
-
           <a
             href="https://www.linkedin.com/in/ahmedaldulaimi"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-2xl border border-white/15 px-6 py-3.5 font-semibold hover:border-white/35 transition"
+            class="btn btn-outline"
           >
             LinkedIn Profile
           </a>
         </div>
 
-        <p class="mt-8 text-zinc-500 text-sm">
+        <div class="footer-note">
           Austin, Texas • English & Arabic
-        </p>
+        </div>
       </div>
     </div>
   </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
