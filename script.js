@@ -30,9 +30,9 @@ const typingText = document.getElementById("typingText");
 
 const phrases = [
   "Validation Engineer",
-  "Electrical Engineer",
-  "Cloud & AI Builder",
-  "Startup-Minded Product Creator",
+  "YouOOO Network Builder",
+  "Cloud & AI Product Builder",
+  "Arabic-English Web Product Creator",
   "Incoming ASU Master’s Student"
 ];
 
